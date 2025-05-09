@@ -168,6 +168,7 @@ public class GraalEditor {
 
    public GraalEditor() {
       this.initialize();
+   
    }
 
    public GraalEditor(String s) {
@@ -550,6 +551,23 @@ public class GraalEditor {
       this.toolbar_button_close.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             GraalEditor.this.closeCurrentTab();
+         }
+      });
+      this.toolbar_button_addnpc.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            if (GraalEditor.this.contentPane.getTabCount() > 0) {
+               ScrollPane_Level currentLevel = GraalEditor.this.getCurrentItem();
+               if (currentLevel != null) {
+                  GraalEditor.this.toolbar_checkbox_npcs.setSelected(true);
+                  GraalEditor.this.options.toggleNPCVisibility(true);
+                  NPC newNpc = currentLevel.level.addNPC();
+                  newNpc.setx(30);
+                  newNpc.sety(30);
+                  currentLevel.canvas.setEdited(true);
+                  currentLevel.canvas.repaint();
+                  new ScriptEditor(newNpc);
+               }
+            }
          }
       });
       this.toolbar_button_addsign.addActionListener(new ActionListener() {
@@ -1122,8 +1140,8 @@ public class GraalEditor {
       this.toolbar_button_links.setEnabled(enabled);
       this.toolbar_button_signs.setEnabled(enabled);
       this.toolbar_button_addsign.setEnabled(enabled);
-      this.toolbar_button_addnpc.setEnabled(false);
-      this.toolbar_button_npcs.setEnabled(false);
+      this.toolbar_button_addnpc.setEnabled(enabled);
+      this.toolbar_button_npcs.setEnabled(enabled);
       this.toolbar_checkbox_links.setEnabled(enabled);
       this.toolbar_checkbox_signs.setEnabled(enabled);
       this.toolbar_checkbox_npcs.setEnabled(enabled);
@@ -1143,9 +1161,7 @@ public class GraalEditor {
          this.toolbar_button_undo.setEnabled(false);
          this.toolbar_button_redo.setEnabled(false);
       }
-
    }
-
    public void updateDefaultTile(short t) {
       this.defaultTile = t;
       this.scroll_tileset.tilesetico.repaint();

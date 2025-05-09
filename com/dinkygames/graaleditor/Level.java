@@ -473,7 +473,7 @@ public class Level {
 
    }
 
-   public void saveLevel(String path) {
+public void saveLevel(String path) {
       if (path != null) {
          this.filename = path;
          this.levelname = (new File(this.filename)).getName();
@@ -486,6 +486,19 @@ public class Level {
 
       String NEWLINE = System.getProperty("line.separator");
       String output = "GLEVNW01" + NEWLINE;
+      
+      // Add any TILESET/TILESETIMAGE entries from tiledefs that match this level's prefix
+      if (this.scroll.main.tiledefs != null && this.scroll.main.tiledefs.tiledefinitions.size() > 0) {
+         for (Object[] def : this.scroll.main.tiledefs.tiledefinitions) {
+            if ((Boolean)def[0] && def[2] != null && this.getVerbalName().startsWith((String)def[2])) {
+               if ((Integer)def[3] == 0) {
+                  output += "TILESET " + def[1] + NEWLINE;
+               } else {
+                  output += "TILESETIMAGE " + def[1] + NEWLINE;
+               }
+            }
+         }
+      }
 
       int i;
       Layer layer;
@@ -553,25 +566,20 @@ public class Level {
          }
       }
 
-     // try {
-         Throwable var34 = null;
-         layer = null;
-
+      try {
+         FileWriter writer = new FileWriter(this.filename);
          try {
-            FileWriter writer = new FileWriter(this.filename);
+            BufferedWriter bw = new BufferedWriter(writer);
             try {
-               BufferedWriter bw = new BufferedWriter(writer);
-               try {
-                  bw.write(output);
-               } finally {
-                  bw.close();
-               }
+               bw.write(output);
             } finally {
-               writer.close();
+               bw.close();
             }
-         } catch (IOException var26) {
-            var26.printStackTrace();
+         } finally {
+            writer.close();
          }
-      //}
+      } catch (IOException var26) {
+         var26.printStackTrace();
+      }
    }
 }

@@ -13,7 +13,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -169,9 +171,18 @@ public class ScriptEditor extends JFrame {
       try {
          scriptReferencePane.setFont(new Font("courier new", 0, 12));
          scriptReferencePane.setLineWrap(false);
-         scriptReferencePane.read(new InputStreamReader(this.getClass().getResourceAsStream("/res/scriptfunctions_client.txt")), (Object)null);
+         
+         // Fix for the NullPointerException - check if resource exists before trying to read it
+         InputStream scriptFunctionStream = this.getClass().getResourceAsStream("/res/scriptfunctions_client.txt");
+         if (scriptFunctionStream != null) {
+            scriptReferencePane.read(new InputStreamReader(scriptFunctionStream), (Object)null);
+            scriptFunctionStream.close();
+         } else {
+            scriptReferencePane.setText("Script functions reference not available.");
+         }
       } catch (IOException var14) {
          var14.printStackTrace();
+         scriptReferencePane.setText("Error loading script functions reference.");
       }
 
       splitPane.setRightComponent(scrollPane);
@@ -182,23 +193,36 @@ public class ScriptEditor extends JFrame {
       final RTextScrollPane scrollPane_1 = new RTextScrollPane(this.txtrFunctionOncreated, true);
       splitPane.setLeftComponent(scrollPane_1);
       this.txtrFunctionOncreated.setCodeFoldingEnabled(true);
-      if (npc.level.scroll.main.options.syntaxhighlighting) {
+      if (npc.level != null && npc.level.scroll != null && npc.level.scroll.main != null && 
+          npc.level.scroll.main.options != null && npc.level.scroll.main.options.syntaxhighlighting) {
          this.txtrFunctionOncreated.setSyntaxEditingStyle("text/javascript");
       } else {
          this.txtrFunctionOncreated.setSyntaxEditingStyle("text/plain");
       }
 
-      this.txtrFunctionOncreated.setTabSize(npc.level.scroll.main.options.scripttabwidth);
+      // Set tab width safely
+      try {
+         if (npc.level != null && npc.level.scroll != null && npc.level.scroll.main != null &&
+             npc.level.scroll.main.options != null) {
+            this.txtrFunctionOncreated.setTabSize(npc.level.scroll.main.options.scripttabwidth);
+         } else {
+            this.txtrFunctionOncreated.setTabSize(2); // Default tab width
+         }
+      } catch (Exception e) {
+         this.txtrFunctionOncreated.setTabSize(2); // Default if any error
+      }
+      
       this.txtrFunctionOncreated.setCurrentLineHighlightColor(new Color(245, 245, 245));
       this.txtrFunctionOncreated.setCodeFoldingEnabled(true);
       this.txtrFunctionOncreated.setAnimateBracketMatching(false);
-      this.txtrFunctionOncreated.setText(npc.script);
+      this.txtrFunctionOncreated.setText(npc.script != null ? npc.script : "");
       scrollPane_1.setViewportView(this.txtrFunctionOncreated);
       this.pack();
       this.setVisible(true);
       instances.add(this);
       this.setSize(800, 600);
-      this.setLocationRelativeTo(npc.level.scroll.main.frame);
+      this.setLocationRelativeTo(npc.level != null && npc.level.scroll != null && 
+                                npc.level.scroll.main != null ? npc.level.scroll.main.frame : null);
       cancelButton.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             ScriptEditor.this.dispose();
@@ -229,8 +253,19 @@ public class ScriptEditor extends JFrame {
          if (npc.level != null) {
             this.npc.image = this.text_imagefilename.getText();
             this.npc.script = this.txtrFunctionOncreated.getText();
-            this.npc.x = Integer.parseInt(this.text_x.getText());
-            this.npc.y = Integer.parseInt(this.text_y.getText());
+            
+            try {
+               this.npc.x = Integer.parseInt(this.text_x.getText());
+            } catch (NumberFormatException e) {
+               this.npc.x = 0;
+            }
+            
+            try {
+               this.npc.y = Integer.parseInt(this.text_y.getText());
+            } catch (NumberFormatException e) {
+               this.npc.y = 0;
+            }
+            
             this.npc.level.scroll.canvas.repaint();
             this.npc.update();
             this.dispose();

@@ -60,7 +60,6 @@ public class TileDefinitions {
       if (cur != null) {
          this.main.getCurrentItem().canvas.repaint();
       }
-
    }
 
    public void save() {
@@ -92,7 +91,6 @@ public class TileDefinitions {
             var8.printStackTrace();
          }
       }
-
    }
 
    public void addDefinition(Object[] newdef) {
@@ -133,6 +131,8 @@ public class TileDefinitions {
                   System.out.println("Tile definition loaded: " + Arrays.toString(newdef));
                }
             }
+            
+            level_br.close();
          } catch (FileNotFoundException var13) {
             var13.printStackTrace();
          } catch (IOException var14) {
@@ -140,6 +140,103 @@ public class TileDefinitions {
          }
 
          this.sortTileDefinitions();
+      }
+   }
+   
+   public void exportTileDefsToLevel(String levelFilename, String levelName) {
+      try {
+         File levelFile = new File(levelFilename);
+         if (!levelFile.exists()) {
+            return;
+         }
+         
+         BufferedReader reader = new BufferedReader(new FileReader(levelFile));
+         StringBuilder content = new StringBuilder();
+         String line;
+         
+         // Read header line
+         if ((line = reader.readLine()) != null) {
+            content.append(line).append("\n");
+         }
+         
+         // Add tileset definitions
+         for (Object[] def : tiledefinitions) {
+            if (def[0] == Boolean.TRUE && def[2] != null && levelName.startsWith((String)def[2])) {
+               if ((Integer)def[3] == 0) {
+                  content.append("TILESET ").append(def[1]).append("\n");
+               } else {
+                  content.append("TILESETIMAGE ").append(def[1]).append("\n");
+               }
+            }
+         }
+         
+         // Continue reading file, skipping existing TILESET lines
+         while ((line = reader.readLine()) != null) {
+            if (!line.startsWith("TILESET ") && !line.startsWith("TILESETIMAGE ")) {
+               content.append(line).append("\n");
+            }
+         }
+         reader.close();
+         
+         // Write the updated content back to the file
+         FileWriter writer = new FileWriter(levelFile);
+         writer.write(content.toString());
+         writer.close();
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
+   }
+   
+   public void importTileDefsFromLevel(String levelFilename) {
+      try {
+         File levelFile = new File(levelFilename);
+         if (!levelFile.exists()) {
+            return;
+         }
+         
+         String levelName = levelFile.getName();
+         levelName = levelName.substring(0, levelName.lastIndexOf('.'));
+         
+         BufferedReader reader = new BufferedReader(new FileReader(levelFile));
+         String line;
+         
+         while ((line = reader.readLine()) != null) {
+            if (line.startsWith("TILESET ")) {
+               String image = line.substring(8).trim();
+               boolean exists = false;
+               
+               for (Object[] def : tiledefinitions) {
+                  if (def[1].equals(image) && def[2].equals(levelName)) {
+                     exists = true;
+                     break;
+                  }
+               }
+               
+               if (!exists) {
+                  Object[] newDef = new Object[]{true, image, levelName, 0, 0, 0};
+                  tiledefinitions.add(newDef);
+               }
+            } else if (line.startsWith("TILESETIMAGE ")) {
+               String image = line.substring(12).trim();
+               boolean exists = false;
+               
+               for (Object[] def : tiledefinitions) {
+                  if (def[1].equals(image) && def[2].equals(levelName)) {
+                     exists = true;
+                     break;
+                  }
+               }
+               
+               if (!exists) {
+                  Object[] newDef = new Object[]{true, image, levelName, 4, 0, 0};
+                  tiledefinitions.add(newDef);
+               }
+            }
+         }
+         reader.close();
+         sortTileDefinitions();
+      } catch (IOException e) {
+         e.printStackTrace();
       }
    }
 }

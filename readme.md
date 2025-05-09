@@ -1,7 +1,7 @@
 ## Requirements
 
 - Java JDK 8 or higher
-- [RSyntaxTextArea library](https://github.com/bobbylight/RSyntaxTextArea.git) (included)
+- [RSyntaxTextArea library](https://github.com/bobbylight/RSyntaxTextArea.git) (included or grab one from [here](https://mvnrepository.com/artifact/com.fifesoft/rsyntaxtextarea/3.0.0))
 
 ### Using batch files (Windows)
 

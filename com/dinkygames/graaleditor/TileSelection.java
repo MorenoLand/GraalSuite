@@ -257,10 +257,10 @@ public class TileSelection extends Entity {
    }
 
    protected void clearResizing() {
-      for(int y = 0; y < this.originaltiles.length; ++y) {
-         for(int x = 0; x < this.originaltiles[0].length; ++x) {
-            this.originaltiles[y][x] = this.tiles[y][x];
-         }
+      this.originaltiles = new short[this.tiles.length][];
+      for (int i = 0; i < this.tiles.length; i++) {
+          this.originaltiles[i] = new short[this.tiles[i].length];
+          System.arraycopy(this.tiles[i], 0, this.originaltiles[i], 0, this.tiles[i].length);
       }
 
       this.ox = this.x;

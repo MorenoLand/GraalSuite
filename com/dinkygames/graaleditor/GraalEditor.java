@@ -124,7 +124,8 @@ public class GraalEditor {
    public JSlider layer_slider;
    public static BufferedImage thumbnailbase;
    private ScrollPane_Level lastLevelTab = null;
-
+   public NPCs_Dialog dialog_npcs;
+   
    public static void main(final String[] args) {
       Object var1 = null;
 
@@ -551,6 +552,17 @@ public class GraalEditor {
       this.toolbar_button_close.addActionListener(new ActionListener() {
          public void actionPerformed(ActionEvent e) {
             GraalEditor.this.closeCurrentTab();
+         }
+      });
+      this.toolbar_button_npcs.addActionListener(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            if (GraalEditor.this.contentPane.getTabCount() > 0) {
+               if (GraalEditor.this.dialog_npcs == null) {
+                  GraalEditor.this.dialog_npcs = new NPCs_Dialog(GraalEditor.this.getCurrentItem().level);
+               } else {
+                  GraalEditor.this.dialog_npcs.requestFocus();
+               }
+            }
          }
       });
       this.toolbar_button_addnpc.addActionListener(new ActionListener() {

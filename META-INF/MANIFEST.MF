@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Rsrc-Class-Path: ./ rsyntaxtextarea-3.0.0-SNAPSHOT.jar
+Class-Path: .
+Rsrc-Main-Class: com.dinkygames.graaleditor.GraalEditor
+Main-Class: org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader
+

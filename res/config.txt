@@ -1,0 +1,4 @@
+graaldir=c:/
+contrastselection=1
+visualsetshape=1
+syntaxhighlighting=1

@@ -1,0 +1,742 @@
+GLEVNW01
+BOARD 0 0 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/E/E4CqCqCqCqCqCqCqCqCqCqCqCq
+BOARD 0 1 64 0 CpCpCpCpCpCpCpCpCpCpCpCpCpCpCpCpCpCpCpCpCpCpDnH/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/E/CpCpE4CqCqCqCqCqCqCqCqCqCqCqCqCq
+BOARD 0 2 64 0 C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6D3DnH/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/E/E4CqCqCqCqCqCqCqCqCqCqCqCqCqCqCqCq
+BOARD 0 3 64 0 DJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKC4D3CpCpCpCpCpCpDnH/H/H/H/H/H/H/H/H/H/H/H/H/H/H/EsCqCqCqCqCqCqCqCqCqCqCqCqCqCqCqCqCq
+BOARD 0 4 64 0 DZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaFxC4C5C6C5C6C5C6D3DnH/H/H/H/H/H/H/H/H/H/H/H/H/E/E8CqCqCqCqCqCqCqCqCqCqCqCqCqCqCqCqCq
+BOARD 0 5 64 0 DpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqGBFxDJDKDJDKDJDKC4D3CpCpCpCpCpCpCpCpCpCpCpCpCpE4CqCqCqCqCqCqCqCqCqCqCqCqCqCqCqCqCqCq
+BOARD 0 6 64 0 DZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaGRGBDZDaDZDaDZDaFxC4C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6C5C6
+BOARD 0 7 64 0 DpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqGBGRDpDqDpDqDpDqGBFxDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDKDJDK
+BOARD 0 8 64 0 DZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaGRGBDZDaDZDaDZDaGRGBDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDa
+BOARD 0 9 64 0 DpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqGBGRDpDqDpDqDpDqGBGRDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDq
+BOARD 0 10 64 0 D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6GRGBDZDaDZDaDZDaGRGBDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDa
+BOARD 0 11 64 0 H/H/H/H/H/H/H/CPCPCPCPCPCPCPCPH/H/H/H/H/H/H/GQGRDpDqDpDqDpDqGBGRDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDq
+BOARD 0 12 64 0 H/H/H/H/H/H/H/CPCPCPCPCPCPCPCPH/H/H/H/H/H/H/H/GQD5D6D5D6D5D6GRGBDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDaDZDa
+BOARD 0 13 64 0 H/H/H/H/H/H/H/CPCPCPCPCPCPCPCPH/H/H/H/H/H/H/H/H/H/H/H/H/H/H/GQGRDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDqDpDq
+BOARD 0 14 64 0 H/H/H/H/H/H/H/CPCPCPCPCPCPCPCPH/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/GQD5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6D5D6
+BOARD 0 15 64 0 H/H/H/H/H/H/H/CPCPCPCPCPCPCPCPH/H/H/H/H/H/H/H/H/H/H/H/H/AJAKALAMANAOAJAKALAMDCDDDADBALAMANAOAJAKALAMANAOH/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 16 64 0 H/H/H/H/H/H/H/CPCPCPCPCPCPCPCPH/H/H/H/H/H/H/H/H/H/H/H/AYAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAfH/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 17 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/AoApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuAvH/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 18 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/A4A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 19 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/BIBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBPH/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 20 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/BYBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBfH/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 21 64 0 H/H/H/H/H/H/H/AJAKALAMANAOAJAKALAMANAOAJAKALAMANAOAJAKALAMDCDDBsBtBuBpBqBrBsBtBuBpBqBrDADBALAMDCDDBsBtBuBvH/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 22 64 0 H/H/H/H/H/H/AYAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeDRB9B+B5B6B7B8B9B+B5B6DQAZAaAbAcAdAeDRB9B+B/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 23 64 0 H/H/H/H/H/H/AoApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuDhCNCOCJCKCLCMCNCOCJCKDgApAqArAsAtAuDhCNCOH/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 24 64 0 H/H/H/H/H/H/A4A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A/CdH/H/CaCbCcCdACADCaA4A5A6A7A8A9A+A/CdH/H/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 25 64 0 H/H/H/H/H/H/BIBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBPAEAFAGAHH/H/H/ASATH/BIBJBKBLBMBNBOBPH/H/H/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 26 64 0 H/H/H/H/H/H/BYBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBfAUAVAWAXACADACADACADBYBZBaBbBcBdBeBfH/H/H/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 27 64 0 H/H/H/H/H/H/BoBpBqBrBsBtBuBpBqBrBsBtBuBpBqBrDADBALAMDCDDBsBtBuBvAkAlAmAnASATASATASATBoBpBqBrBsBtBuBvBABBBCBDBDBDBDBDBDBFBGBHH/H/
+BOARD 0 28 64 0 H/H/H/H/H/H/B4B5B6B7B8B9B+B5B6B7B8B9B+B5B6DQAZAaAbAcAdAeDRB9B+B/A0A1A2A3H/ACADH/H/H/B4B5B6B7B8B9B+B/BQBRBSBTBUBUBUBUBTBVBRBXByH/
+BOARD 0 29 64 0 H/H/H/H/H/H/H/CJCKCLCMCNCOCJCKCLCMCNCOCJCKDgApAqArAsAtAuDhCNCOH/H/AAABAAABASATH/H/H/H/CJCKCLCMCNCOH/BQBRBSBUBUBUBUBUBUBVBRBXCCH/
+BOARD 0 30 64 0 H/H/H/H/H/H/H/H/CaCbCcCdH/H/CaCbCcCdH/H/CaA4A5A6A7A8A9A+A/CdH/H/H/H/AAABH/H/H/H/H/H/H/H/CaCbCcCdH/H/BQBRBSBUBUBUBUBUBUBVBRBXCCH/
+BOARD 0 31 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/ACADACADBIBJBKBLBMBNBOBPH/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/BQBRBSBUBUBUBUBUBUBVBRBXCCH/
+BOARD 0 32 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/ASATASATBYBZBaBbBcBdBeBfH/H/H/H/H/AJAKALAMANAOH/H/H/H/H/H/H/H/H/H/BQBRBSBTBUBUBUBUBTBVBRBXCCH/
+BOARD 0 33 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/ACADBoBpBqBrBsBtBuBvH/H/H/H/AYAZAaAbAcAdAeAfH/H/H/H/H/H/H/H/H/BQBhBiBjBjBjBjBjBjBWCkClCCH/
+BOARD 0 34 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/ASATB4B5B6B7B8B9B+B/H/H/H/H/AoApAqArAsAtAuAvH/AAABH/H/H/H/H/H/BQBxBRBRBRBRBRBRBRBRC0ClCCH/
+BOARD 0 35 64 0 H/H/H/H/H/H/H/H/H/H/H/CFCGH/H/H/H/H/H/H/H/H/CJCKCLCMCNCOH/H/H/H/H/A4A5A6A7A8A9A+A/H/H/H/AAABH/H/H/H/CACBBRBRBkBlBmBnBRBRDEDFCCH/
+BOARD 0 36 64 0 H/H/H/H/H/H/H/H/H/H/H/CVCWH/H/H/H/H/H/H/H/H/H/CaCbCcCdH/H/H/H/H/H/BIBJBKBLBMBNBOBPH/H/AAABH/H/H/H/H/CQCRCRCRB0B1B2B3CRCRCRBzCCH/
+BOARD 0 37 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/BYBZBaBbBcBdBeBfH/H/H/H/H/H/H/H/H/CgChCiCjCEwLwLCHChCiCjCDCCH/
+BOARD 0 38 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/BoBpBqBrBsBtBuBvH/H/H/H/H/H/H/H/H/CwCxCyCzCUItItCXCxCyCzCTCSH/
+BOARD 0 39 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/B4B5B6B7B8B9B+B/H/H/H/H/H/H/H/H/H/f/f/IAIBBEAwAxBEf/f/f/f/f/H/
+BOARD 0 40 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/CJCKCLCMCNCOH/H/H/H/H/H/H/H/H/H/f/f/IQIRAwAxAwAxf/f/f/f/f/H/
+BOARD 0 41 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/CaCbCcCdH/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 42 64 0 ZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZv
+BOARD 0 43 64 0 ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7ara7
+BOARD 0 44 64 0 apaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaqapaq
+BOARD 0 45 64 0 a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6a5a6
+BOARD 0 46 64 0 ZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZfZPZf
+BOARD 0 47 64 0 ZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZvZv
+BOARD 0 48 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/AJAKALAMANAOH/H/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 49 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/AYAZAaAbAcAdAeAfH/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 50 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/AoApAqArAsAtAuAvH/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 51 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/A4A5A6A7A8A9A+A/H/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 52 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/BIBJBKBLBMBNBOBPH/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 53 64 0 H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/H/BYBZBaBbBcBdBeBfH/H/H/H/H/H/H/H/H/H/H/H/
+BOARD 0 54 64 0 AJAKALAMANAOAJAKALAMANAOAJAKALAMANAOAJAKALAMANAOAJAKALAMANAOAJAKALAMANAOAJAKALAMANAOAJAKALAMDCDDDADBALAMANAOAJAKALAMANAOAJAKALAM
+BOARD 0 55 64 0 AZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAc
+BOARD 0 56 64 0 ApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAs
+BOARD 0 57 64 0 A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8
+BOARD 0 58 64 0 BJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBMBNBOBJBKBLBM
+BOARD 0 59 64 0 BZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBcBdBeBZBaBbBc
+BOARD 0 60 64 0 AMDCDDDADBALAMDCDDDADBALAMDCDDDADBALAMDCDDDADBALAMDCDDDADBALAMDCDDDADBALAMDCDDDADBALAMDCDDDADBALAMDCDDDADBALAMDCDDDADBALAMDCDDDA
+BOARD 0 61 64 0 AcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZAaAbAcAdAeAZ
+BOARD 0 62 64 0 AsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuApAqArAsAtAuAp
+BOARD 0 63 64 0 A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5A6A7A8A9A+A5
+LINK new.nw 32 28 4 1 32 32
+LINK test 11 35 2 2 32 32
+SIGN 52 40
+Test this is a sign#btest
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SIGNEND
+NPC tree.png 7 7
+function onCreated() {
+  this.chat = "test";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NPCEND
+NPC door.png 55 37
+join("door.png");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NPCEND
+NPC - 29 37
+function onCreated() {
+  showcharacter();
+  setcharprop #3,head0.png;
+  setcharprop #C0,2;
+  setcharprop #C1,56;
+  setcharprop #C2,56;
+  setcharprop #C3,153;
+  setcharprop #C4,56;
+  setcharprop #8,body8.png;
+  setcharprop #P1,hat_aeko-witcheshead.png;
+  setcharprop #2,no-shield.gif;
+  shieldpower = 1;
+  setcharani iride1still-broomv2,;
+  this.z = 0;
+  
+  this.quizing = "";
+  this.quiz = "";
+  for (temp.p: players) {
+    if (temp.p.client.halloweenquiz) {
+      temp.p.client.halloweenquiz = "";
+      temp.p.triggerclient("weapon", "-System", "killsay3");
+    }
+  }
+  flyAway();
+}
+
+function onPlayerTouchsMe() {
+  if (this.quizing == player.account || ((player.dir+2)%4) != this.dir) return;
+  if (player.hasQuestHorse("mount_broom.png")) {
+    player.say2("I've already given you a broom!#bLet someone else try.");
+  }
+  else if (player.account in this.quiz) {
+    player.say2("I've already quizzed you!#bLet someone else try.");
+  }
+  else if (!this.quizing) {
+    this.quizing = player.account;
+    this.quiz.add(player.account);
+    this.quiztimeout = timevar2 + 60;
+    client.halloweenquiz = true;
+    triggeraction(this.x+1,this.y+1,"StartQuiz",player.account);
+    setTimer(1);
+  } else {
+    player.say2("I'm quizzing someone else right#bnow, don't be rude!");
+  }
+}
+
+function onTimeout() {
+  if (this.quizing) {
+    if (findplayer(this.quizing).client.halloweenquiz) {
+      if (this.quizing && timevar2 >= this.quiztimeout) {
+        this.quizing = "";
+        findplayer(this.quizing).triggerclient("weapon", "-System", "killsay3");
+      } else {
+        setTimer(0.1);
+      }
+    } else {
+      this.quizing = "";
+    }
+  }
+}
+
+function onPlayerLogout(pl) {
+  if (this.quizing == pl.account) {
+    onActionQuiz(0);
+  }
+}
+
+function randomizeQuestions() {
+  for (temp.i = 0; temp.i < 32; temp.i++) {
+    temp.nums.add(temp.i);
+  }
+  for (temp.i = 0; temp.i < 4; temp.i++) {
+    this.attr[3+temp.i] = randomstring(temp.nums);
+    temp.nums.remove(this.attr[3+temp.i]);
+  }
+}
+
+function flyAway() {
+  setcharani("classic_broomlift", "");
+  showani(1, this.x, this.y, this.dir, "classic_broomlift_2");
+  changeimgvis(1, 0);  
+  move(0,-20,3,0);
+  wait(1.5);
+  this.attr[2] = "classiceffect_fadeout.gani";
+  wait(1.1);
+  hideimg(1);
+  hide();
+  this.attr[2] = "";
+  wait(3);
+  warptoLocation();
+  comeBackDown();
+}
+
+function wait(len) {
+  waitfor(this, "WaitingPeriod", len);
+}
+
+function comeBackDown() {
+  this.attr[2] = "classiceffect_fadein.gani";
+  setcharani("classic_broomlift", "");
+  temp.oy = this.y;
+  this.y -= 10;
+  showani(1, this.x, temp.oy, this.dir, "classic_broomlift_2");
+  changeimgvis(1, 0);
+  show();
+  move(0,10,3,0);
+  wait(3);
+  hideimg(1);
+  this.attr[2] = "";
+  this.y = temp.oy;
+  setcharani("iride1still-broomv2", "");
+  randomizeQuestions();
+  this.awarded = "";
+  this.quizing = "";
+  this.quiz = "";
+}
+
+function warptoLocation() {
+  // Debugging
+  temp.locations = {
+    {"-halloween.nw", int(random(10,50)), int(random(10,50)), int(random(0,4))},
+  };
+  // Live
+  temp.locationz = {
+    {"graalcity_outside_06.nw", 10, 20, 2},
+    {"graalcity_outside_07.nw", 53, 6, 2},
+    {"graalcity_outside_10.nw", 55, 51, 1},
+    {"onnettown_outside_02.nw", 13, 55, 3},
+    {"overworld_mountain_03.nw", 7, 53, 3},
+    {"overworld_mountain_03.nw", 46, 52, 1},
+    {"onnettown_outside_02.nw", 64, 11, 2},
+    {"onnettown_outside_04.nw", 16, 15, 3},
+    {"onnettown_outside_03.nw", 10, 7, 0},
+    {"onnettown_outside_04.nw", 0, 60, 0},
+    {"onnettown_outside_03.nw", 27, 55, 1},
+    {"overworld_28.nw", 5, 12, 3},
+    {"overworld_28.nw", 32, 0, 3},
+    {"overworld_45.nw", 0, 5, 1},
+    {"overworld_44.nw", 0, 47, 0},
+    {"overworld_43.nw", 5, 40, 3},
+    {"overworld_44.nw", 61, 0, 1},
+    {"overworld_64.nw", 2, 63, 1},
+    {"overworld_45.nw", 63, 40, 2},
+    {"overworld_68.nw", 34, 53, 2},
+    {"overworld_46.nw", 8, 56, 3},
+    {"overworld_80.nw", 18, 13, 3},
+    {"overworld_77.nw", 34, 53, 2},
+    {"overworld_83.nw", 25, 9, 2},
+    {"overworld_82.nw", 35, 53, 3},
+    {"overworld_75.nw", 50, 29, 1},
+    {"overworld_75.nw", 29, 16, 3},
+    {"overworld_11.nw", 61, 56, 1},
+    {"graalcity_outside_14.nw", 39, 51, 2},
+    {"graalcity_outside_20.nw", 27, 60, 0},
+    {"graalcity_outside_19.nw", 44, 44, 1},
+    {"overworld_104.nw", 59, 53, 2},
+    {"overworld_109.nw", 4, 48, 3},
+    {"overworld_110.nw", 35, 10, 2},
+    {"overworld_20.nw", 34, 24, 3},
+    {"overworld_06.nw", 13, 10, 1},
+    {"overworld_21.nw", 36, 5, 0},
+    {"overworld_06.nw", 14, 39, 3},
+    {"overworld_04.nw", 11, 36, 2},
+    {"overworld_05.nw", 7, 33, 3},
+    {"overworld_03.nw", 43, 30, 1},
+    {"overworld_01.nw", 46.5, 9, 2},
+    {"overworld_01.nw", 52, 32, 3},
+    {"overworld_02.nw", 11, 34, 3},
+    {"overworld_02.nw", 30, 8, 1},
+    {"overworld_33.nw", 44, 45, 3},
+    {"overworld_37.nw", 12, 44, 1},
+    {"swamptown_outside_03.nw", 15, 57, 0},
+    {"swamptown_outside_05.nw", 46, 4, 2},
+    {"swamptown_outside_05.nw", 60, 35, 3},
+    {"overworld_38.nw", 59, 13, 3},
+    {"overworld_40.nw", 22.5, 31, 2},
+    {"overworld_92.nw", 55, 39, 1},
+    {"overworld_84.nw", 33, 53, 0},
+    {"graalcity_outside_20.nw", 33, 19, 0},
+    {"graalcity_outside_19.nw", 37, 17, 3},
+    {"graalcity_outside_17.nw", 48, 0, 2},
+    {"overworld_100.nw", 55, 42, 2},
+    {"overworld_96.nw", 55, 56, 3},
+    {"overworld_mountain_07.nw", 56, 54, 2},
+    {"onnettown_outside_01.nw", 54, 3, 1},
+    {"overworld_14.nw", 26.5, 48, 2},
+    {"overworld_13.nw", 57, 13, 1},
+    {"overworld_11.nw", 60, 2, 1},
+    {"graalcity_outside_06.nw", 30, 60, 1},
+    {"graalcity_outside_07.nw", 58, 58, 3},
+    {"swamptown_outside_01.nw", 41, 15, 1},
+    {"swamptown_outside_01.nw", 48, 26, 3},
+    {"overworld_35.nw", 4, 3, 0},
+    {"overworld_35.nw", 5, 20, 2},
+    {"overworld_20.nw", 19, 1, 3},
+    {"graalcity_outside_13.nw", 25, 17, 2},
+    {"overworld_26.nw", 10, 59, 2},
+    {"overworld_26.nw", 19, 38, 1},
+    {"graalcity_outside_02.nw", 11.5, 26, 2},
+    {"graalcity_outside_01.nw", 48, 0, 3},
+    {"overworld_09.nw", 15, 7, 2},
+    {"overworld_109.nw", 14, 11, 2},
+    //{"graalcity_outside_04.nw", 52, 12, 1},
+    {"onnettown_outside_04.nw", 20.5, 40, 1},
+    {"overworld_68.nw", 26, 37, 1},
+    {"overworld_50.nw", 51, 55, 3},
+    {"overworld_32.nw", 4, 25, 2},
+    {"overworld_02.nw", 30, 42, 0},
+    {"swamptown_outside_01.nw", 58.5, 34, 2},
+    {"graalcity_outside_15.nw", 9, 63, 3},
+    {"graalcity_outside_17.nw", 48, 37, 2},
+    {"graalcity_outside_19.nw", 57, 5, 1},
+    {"graalcity_outside_20.nw", 53.5, 23, 0},
+    {"graalcity_outside_02.nw", 59, 10, 0},
+    {"overworld_29.nw", 4, 44, 1}
+  };
+  temp.location = randomstring(temp.locations);
+  this.current = temp.location;
+  this.dir = temp.location[3];
+  warpto(temp.location[0], temp.location[1], temp.location[2]);
+}
+
+function onActionServerSide() {
+  if (params[0] == "quiz") {
+    if (player in players) {
+      onActionQuiz(params[1]);
+    }
+  }
+  else if (params[0] == "deny") {
+    this.quiz.remove(player.account);
+  }
+}
+
+function onActionQuiz(lvl) {
+  if (this.awarded > timevar2) return;
+  // 4 = broom
+  if (lvl == 4) {
+    player.addQuestHorse("mount_broom.png");
+    player.say3("You know your stuff, I'm impressed! Here, take my spare broom. Have a safe and enjoyable Halloween this year!", 2);
+    setani("classic_showitem", "classic_icon_broom.png");
+  }
+  // Close other players
+  temp.killsay3 = (this.quiz.size() >= 5);
+  for (temp.p: players) {
+    if (temp.p.client.halloweenquiz) {
+      if (temp.killsay3) {
+        temp.p.client.halloweenquiz = "";
+        temp.p.triggerclient("weapon", "-System", "killsay3");
+      }
+    }
+  }
+  // Fly Away
+  if (temp.killsay3) {
+    this.awarded = timevar2 + 5;
+    wait(3);
+    flyAway();
+  }
+}
+
+//#CLIENTSIDE
+
+function onActionStartQuiz(acc) {
+  if (player.account != acc) return;
+  if ("mount_broom.png" in clientr.questhorses || ((player.dir+2)%4) != this.dir) {
+    return;
+  }
+  client.halloweenquiz = true;
+  if (!client.halloweenquiztaken) {
+    client.halloweenquiztaken = true;
+    temp.msg = "Oh, hello! Great time of the year #bisn't it? I just looooooooooove #bHalloween. Would you like to take #bpart in my Halloween quiz? If you #bcorrectly answer my questions #bI'll give you a prize!";
+  } else {
+    temp.msg = "Hello again, back to take the#bHalloween quiz?";
+  }
+  temp.resp = (@"-GUI/Chat").say3(temp.msg, 0, {"Sure", "Nope"});
+  if (temp.resp != "Sure") {
+    client.halloweenquiz = "";
+    triggerserver("npc", "Witch", "deny");
+    return;
+  }
+  temp.lvl = quizPlayer();
+  if (temp.lvl == -1) {
+    return;
+  }
+  else if (temp.lvl == 4) {
+    //temp.msg = "You know your stuff, I'm impressed! Here, take my spare broom. Have a safe and enjoyable Halloween this year!";
+    temp.msg = "";
+  } else {
+    temp.gameover = {
+"May your every wish be granted. However, it isn't happening this time! You lost! Better luck next time.",
+"Sorry there ghoul friend, you were wrong. It's the end of the road, better luck next time!",
+"That tickled my funny bone, but it was still wrong. Better luck next time!",
+"What a pain in the neck, you were wrong! Better luck next time, sucker.",
+"Oh the horror! That was the wrong answer! Better luck next time!",
+"Sorry pumpkin, you were wrong. Try again sometime, it might raise your spirits!",
+"Ha ha, that was totally wrong! What a howl! Go study up and try again later!",
+"I don't mean to spook you, but that was totally wrong. Better luck next time!",
+"Slaughtered! That was the wrong answer. Try again later!",
+"Do you know anything about Halloween, or are you just being a lazy bones? Try again later.",
+"Aww boo, that was wrong! Better luck next time.",
+"So spooky! The look in your eyes said you knew the answer, but it turns out you didn't. Better luck next time.",
+"What posessed you to choose that answer? It was wrong! Better luck next time",
+"Sorry, that was the wrong answer. Even an old bat like me knew that. Try again later.",
+"Wrong answer! Go dig up some books and learn your Halloween history!",
+"That answer was the final nail in your coffin. Better luck next time!",
+"You're killing me here. Try again later, and next time try not to be dead on your feet!",
+"You've made a grave error, because that answer was wrong! Better luck next time!"
+    };
+    temp.msg = temp.gameover[int(random(0, temp.gameover.size()))];
+  }
+  if (client.halloweenquiz) {
+    client.halloweenquiz = "";
+    if (temp.msg) {
+      (@"-GUI/Chat").say3(temp.msg, 2);
+    }
+    //triggeraction(this.x+1, this.y+1, "Quiz", lvl);
+    triggerserver("npc", "Witch", "quiz", lvl);
+  }
+}
+
+function quizPlayer(lvl) {
+  if (lvl == 4) {
+    return lvl;
+  }
+  player.showEmoticon("emotions_witch.png");
+  temp.phrases = {
+    "Okay, let's start!",
+    "That's right! Hmm..",
+    "Correct! Now..",
+    "Right again! Finally..",
+  };
+  temp.num = this.attr[3+lvl];
+  temp.question_data = getQuestionData(temp.num);
+  temp.answer        = temp.question_data[1+int(temp.question_data[3])];
+  temp.answers       = (random(0,1) > 0.5 ? {temp.question_data[1], temp.question_data[2]} : {temp.question_data[2], temp.question_data[1]}); 
+  temp.resp = (@"-GUI/Chat").say3(format("%s %s", temp.phrases[lvl], temp.question_data[0]), 2, temp.answers);
+  if (temp.resp == "") {
+    return -1;
+  }
+  else if (temp.resp == temp.answer) {
+    return quizPlayer(lvl+1); 
+  } else {
+    return lvl;
+  }
+}
+
+function getQuestionData(num) {
+  temp.questions = {
+    "Which brings you good luck on Halloween?",
+    "Spider",
+    "Black Cat",
+    "0",
+    
+    "Pumpkins only come in one color, don't they?",
+    "True",
+    "False",
+    "1",
+    
+    "Where do pumpkins typically grow?",
+    "Vines",
+    "Bushes",
+    "0",
+    
+    "What is a group of witches called?",
+    "Covern",
+    "Cackle",
+    "0",
+    
+    "What were the first Jack-o-Lanterns made out of?",
+    "Turnips",
+    "Potatoes",
+    "0",
+    
+    "What food do zombies typically eat?",
+    "Eyes",
+    "Brains",
+    "1",
+    
+    "What fruit is candied or dipped in caramel around Halloween?",
+    "Apple",
+    "Banana",
+    "0",
+    
+    "What does a devil usually carry around with them?",
+    "Pitchfork",
+    "Trident",
+    "0",
+    
+    "What species of monster is a lycan?",
+    "Werewolf",
+    "Vampire",
+    "0",
+    
+    "Halloween is also known as All Hallow's End, isn't it?",
+    "True",
+    "False",
+    "1",
+    
+    "What do you call a male witch?",
+    "Warlock",
+    "Wizard",
+    "0",
+    
+    "What type of bullet can kill a werewolf?",
+    "Silver",
+    "Gold",
+    "0",
+    
+    "What is the name of the scientist who created Frankenstein?",
+    "Victor",
+    "Harker",
+    "0",
+    
+    "What is a herb that can ward off vampires?",
+    "Garlic",
+    "Basil",
+    "0",
+    
+    "What is a unibrow the sign of?",
+    "Werewolf",
+    "Vampire",
+    "0",
+    
+    "In Twilight, which Cullen has the ability to read minds?",
+    "Edward",
+    "Alice",
+    "0",
+    
+    "What is the favorite food of ghouls?",
+    "Flesh",
+    "Bones",
+    "0",
+    
+    "What would be the best armor to starve a zombie?",
+    "Helmet",
+    "Chainmail",
+    "0",
+    
+    "What is the name of the creatures that witches summon to help cause trouble for the unsuspecting humans?",
+    "Familiars",
+    "Demons",
+    "0",
+    
+    "What strengthens the magic of a witch?",
+    "Moon",
+    "Stars",
+    "0",
+    
+    "Are pumpkins a vegetable or a fruit?",
+    "Fruit",
+    "Vegetable",
+    "0",
+    
+    "What do witches brew their potions inside of?",
+    "Cauldron",
+    "Stove",
+    "0",
+    
+    "On Halloween, people wear masks to welcome spirits, don't they?",
+    "True",
+    "False",
+    "1",
+    
+    "The Bride of Frankenstein was not a human, true or false?",
+    "True",
+    "False",
+    "0",
+    
+    "Bodies that are wrapped and stored in tombs are known as what?",
+    "Mummies",
+    "Vampires",
+    "0",
+    
+    "Who is said to have been the monster?",
+    "Jekyll",
+    "Hyde",
+    "1",
+
+    "What is said to be affected by a full moon?",
+    "Werewolf",
+    "Mummy",
+    "0",
+
+    "On Halloween it is traditional to \"bob\" for what kind of fruit?",
+    "Apple",
+    "Orange",
+    "0",
+    
+    "What symbol is associated with witchcraft?",
+    "Pentagram",
+    "Crescent",
+    "0",
+    
+    "Vampires transform when there is a full moon, don't they?",
+    "True",
+    "False",
+    "1",
+    
+    "Pumpkins can be eaten as food too, can't they?",
+    "True",
+    "False",
+    "0",
+    
+    "Only females are labelled as \"witches\", aren't they?",
+    "False",
+    "True",
+    "1",
+    
+    "What animal would a Princess kiss to find their Prince?",
+    "Frog",
+    "Spider",
+    "0",
+    
+    "There are some bats that really drink blood, isn't there?",
+    "True",
+    "False",
+    "0",
+    
+    "Vampires are typically known for biting which part of their victims?",
+    "Neck",
+    "Thigh",
+    "0",
+  };
+  temp.ind = num * 4;
+  return temp.questions.subarray(temp.ind,4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NPCEND
+NPC door.png 37 9
+function onCreated() {
+  this.setimgpart("treetopgreen_inside.png",16,0,96,96);
+  //setimgpart   treetopgreen_inside.png,0,0,40,40;
+  this.chat = "test";
+}
+
+function onWasHit() {
+  this.chat = "oww!";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+NPCEND
+NPC - 55 18
+function onCreated() {
+  showcharacter();
+  this.head = "head2.png";
+  this.ani = "sit";
+  this.colors[0] = "orange";
+  this.colors[1] = "white";
+  this.colors[2] = "red";
+  this.colors[3] = "darkred";
+  this.colors[4] = "black";   
+  this.nick = "Fung Si Yan";
+  this.ap = 100; 
+}
+
+
+
+NPCEND
+NPC - 59 18
+function onCreated() {
+  showcharacter;
+  setcharprop #3,head5.png;
+  setcharprop #8,body2.png;
+  setani sword,;
+  setcharprop #C0,orange
+  setcharprop #C1,white;
+  setcharprop #C2,red;
+  setcharprop #C3,darkred;
+  setcharprop #C4,black
+  setcharprop #n,Sung Yan Fi;
+  ap = 0;
+}
+
+
+
+NPCEND
+NPC light4.png 42 38
+//#CLIENTSIDE
+function onCreated() {
+  this.red = 1;
+  this.green = 1;
+  this.blue = 0;
+  this.alpha = .99;
+}
+
+
+
+NPCEND
+NPC dc_destiny_lizardonnest0.png 17 41
+
+
+NPCEND
+NPC fire.gif 20 13
+
+NPCEND

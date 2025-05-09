@@ -3,6 +3,7 @@
 
 # Package files
 *.jar
+!rsyntaxtextarea-3.0.0-SNAPSHOT.jar
 *.war
 *.ear
 *.zip

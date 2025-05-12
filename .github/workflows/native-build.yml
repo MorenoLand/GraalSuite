@@ -52,20 +52,44 @@ jobs:
         name: GraalSuite-JAR-${{ github.run_id }}
         path: bin
         
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
-        
-    - name: Create Windows EXE with jpackage
-      shell: cmd
+    - name: Set up Launch4j
       run: |
-        mkdir dist
-        mkdir dist\windows
-        echo {} > bin\GraalSuite.cfg
-        jpackage --input bin --main-jar GraalSuite.jar --main-class com.dinkygames.graaleditor.GraalEditor --type exe --dest dist\windows --name GraalSuite --icon res\graalico_editor.ico --win-shortcut --win-menu --win-per-user-install
-        copy dist\windows\GraalSuite-*.exe bin\GraalSuite.exe
+        mkdir launch4j
+        Invoke-WebRequest -Uri "https://master.dl.sourceforge.net/project/launch4j/launch4j-3/3.14/launch4j-3.14-win32.zip?viasf=1" -OutFile "launch4j.zip"
+        Expand-Archive -Path launch4j.zip -DestinationPath .
+        Rename-Item launch4j-3.14-win32 launch4j
+      shell: powershell
+  
+    - name: Create EXE
+      run: |
+        echo ^<launch4jConfig^> > config.xml
+        echo   ^<dontWrapJar^>false^</dontWrapJar^> >> config.xml
+        echo   ^<headerType^>gui^</headerType^> >> config.xml
+        echo   ^<jar^>bin\GraalSuite.jar^</jar^> >> config.xml
+        echo   ^<outfile^>bin\GraalSuite.exe^</outfile^> >> config.xml
+        echo   ^<errTitle^>GraalSuite Error^</errTitle^> >> config.xml
+        echo   ^<chdir^>^</chdir^> >> config.xml
+        echo   ^<customProcName^>true^</customProcName^> >> config.xml
+        echo   ^<icon^>res\graalico_editor.ico^</icon^> >> config.xml
+        echo   ^<jre^> >> config.xml
+        echo     ^<path^>^</path^> >> config.xml
+        echo     ^<minVersion^>1.8.0^</minVersion^> >> config.xml
+        echo     ^<jdkPreference^>preferJre^</jdkPreference^> >> config.xml
+        echo   ^</jre^> >> config.xml
+        echo   ^<versionInfo^> >> config.xml
+        echo     ^<fileVersion^>1.0.0.0^</fileVersion^> >> config.xml
+        echo     ^<txtFileVersion^>1.0.0.0^</txtFileVersion^> >> config.xml
+        echo     ^<fileDescription^>GraalSuite Editor^</fileDescription^> >> config.xml
+        echo     ^<copyright^>^</copyright^> >> config.xml
+        echo     ^<productVersion^>1.0.0.0^</productVersion^> >> config.xml
+        echo     ^<txtProductVersion^>1.0.0.0^</txtProductVersion^> >> config.xml
+        echo     ^<productName^>GraalSuite^</productName^> >> config.xml
+        echo     ^<internalName^>GraalSuite^</internalName^> >> config.xml
+        echo     ^<originalFilename^>GraalSuite.exe^</originalFilename^> >> config.xml
+        echo   ^</versionInfo^> >> config.xml
+        echo ^</launch4jConfig^> >> config.xml
+        launch4j\launch4j.exe config.xml
+      shell: cmd
         
     - name: Upload Windows EXE
       uses: actions/upload-artifact@v4

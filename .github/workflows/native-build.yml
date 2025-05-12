@@ -54,10 +54,9 @@ jobs:
         
     - name: Set up Launch4j
       run: |
-        mkdir launch4j
         Invoke-WebRequest -Uri "https://master.dl.sourceforge.net/project/launch4j/launch4j-3/3.14/launch4j-3.14-win32.zip?viasf=1" -OutFile "launch4j.zip"
         Expand-Archive -Path launch4j.zip -DestinationPath .
-        Rename-Item launch4j-3.14-win32 launch4j
+        Get-ChildItem -Path . -Directory -Filter "launch4j*"
       shell: powershell
   
     - name: Create EXE
@@ -88,7 +87,7 @@ jobs:
         echo     ^<originalFilename^>GraalSuite.exe^</originalFilename^> >> config.xml
         echo   ^</versionInfo^> >> config.xml
         echo ^</launch4jConfig^> >> config.xml
-        launch4j\launch4j.exe config.xml
+        launch4j-3.14-win32\launch4j.exe config.xml
       shell: cmd
         
     - name: Upload Windows EXE

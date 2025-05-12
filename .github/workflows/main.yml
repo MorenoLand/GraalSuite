@@ -26,14 +26,14 @@ jobs:
         
     - name: Create build script
       run: |
-        cat > build_linux.sh << 'EOF'
+        cat > build_linux.sh << EOF
 #!/bin/bash
 
 mkdir -p bin build
 
 javac -d build -Xlint:-deprecation -Xlint:-unchecked -cp .:rsyntaxtextarea-3.0.0-SNAPSHOT.jar com/dinkygames/graaleditor/*.java com/dinkygames/graaleditor/undo/*.java org/eclipse/jdt/internal/jarinjarloader/*.java
 
-if [ $? -ne 0 ]; then
+if [ \$? -ne 0 ]; then
     echo "Compilation failed"
     exit 1
 fi

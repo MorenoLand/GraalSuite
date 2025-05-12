@@ -1,0 +1,171 @@
+name: Build Native Executables
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [created, published]
+
+jobs:
+  build-jar:
+    runs-on: ubuntu-latest
+    outputs:
+      jar_path: ${{ steps.jar.outputs.path }}
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK 8
+      uses: actions/setup-java@v4
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+        
+    - name: Build JAR
+      run: |
+        mkdir -p bin build
+        javac -d build -Xlint:-deprecation -Xlint:-unchecked -cp .:rsyntaxtextarea-3.0.0-SNAPSHOT.jar com/dinkygames/graaleditor/*.java com/dinkygames/graaleditor/undo/*.java org/eclipse/jdt/internal/jarinjarloader/*.java
+        cd build
+        jar xf ../rsyntaxtextarea-3.0.0-SNAPSHOT.jar
+        cd ..
+        cp -r res build/
+        cp -r META-INF build/ 2>/dev/null || mkdir -p build/META-INF
+        echo "Manifest-Version: 1.0" > manifest.txt
+        echo "Main-Class: com.dinkygames.graaleditor.GraalEditor" >> manifest.txt
+        jar cvfm bin/GraalSuite.jar manifest.txt -C build .
+        rm -rf build manifest.txt
+        
+    - name: Upload JAR Artifact
+      id: jar
+      uses: actions/upload-artifact@v4
+      with:
+        name: GraalSuite-JAR
+        path: bin/GraalSuite.jar
+        
+  build-windows-exe:
+    needs: build-jar
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Download JAR
+      uses: actions/download-artifact@v4
+      with:
+        name: GraalSuite-JAR
+        path: bin
+        
+    - name: Setup Launch4j
+      uses: bastivd/setup-launch4j@v1
+      with:
+        launch4j-version: '3.50'
+        
+    - name: Create Launch4j Configuration
+      shell: cmd
+      run: |
+        echo ^<launch4jConfig^> > launch4j.xml
+        echo   ^<dontWrapJar^>false^</dontWrapJar^> >> launch4j.xml
+        echo   ^<headerType^>gui^</headerType^> >> launch4j.xml
+        echo   ^<jar^>%CD%\bin\GraalSuite.jar^</jar^> >> launch4j.xml
+        echo   ^<outfile^>%CD%\bin\GraalSuite.exe^</outfile^> >> launch4j.xml
+        echo   ^<errTitle^>^</errTitle^> >> launch4j.xml
+        echo   ^<cmdLine^>^</cmdLine^> >> launch4j.xml
+        echo   ^<chdir^>.^</chdir^> >> launch4j.xml
+        echo   ^<priority^>normal^</priority^> >> launch4j.xml
+        echo   ^<downloadUrl^>^</downloadUrl^> >> launch4j.xml
+        echo   ^<supportUrl^>^</supportUrl^> >> launch4j.xml
+        echo   ^<stayAlive^>false^</stayAlive^> >> launch4j.xml
+        echo   ^<restartOnCrash^>false^</restartOnCrash^> >> launch4j.xml
+        echo   ^<icon^>%CD%\res\graalico_editor.ico^</icon^> >> launch4j.xml
+        echo   ^<jre^> >> launch4j.xml
+        echo     ^<minVersion^>1.8.0^</minVersion^> >> launch4j.xml
+        echo     ^<jdkPreference^>preferJre^</jdkPreference^> >> launch4j.xml
+        echo     ^<runtimeBits^>64^</runtimeBits^> >> launch4j.xml
+        echo   ^</jre^> >> launch4j.xml
+        echo ^</launch4jConfig^> >> launch4j.xml
+        
+    - name: Build Windows EXE
+      shell: cmd
+      run: launch4jc launch4j.xml
+        
+    - name: Upload Windows EXE
+      uses: actions/upload-artifact@v4
+      with:
+        name: GraalSuite-Windows
+        path: bin/GraalSuite.exe
+        
+  build-linux-appimage:
+    needs: build-jar
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Download JAR
+      uses: actions/download-artifact@v4
+      with:
+        name: GraalSuite-JAR
+        path: bin
+        
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    - name: Install AppImage tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y fuse libfuse2
+        wget -O appimagetool "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
+        chmod +x appimagetool
+        
+    - name: Prepare AppDir structure
+      run: |
+        mkdir -p AppDir/usr/bin AppDir/usr/share/applications AppDir/usr/share/icons/hicolor/256x256/apps
+        cp bin/GraalSuite.jar AppDir/usr/bin/
+        convert res/graalico_editor.png -resize 256x256 AppDir/usr/share/icons/hicolor/256x256/apps/graalsuite.png
+        
+        cat > AppDir/usr/bin/graalsuite << 'EOF'
+        #!/bin/bash
+        java -jar "$APPDIR/usr/bin/GraalSuite.jar" "$@"
+        EOF
+        chmod +x AppDir/usr/bin/graalsuite
+        
+        cat > AppDir/usr/share/applications/graalsuite.desktop << 'EOF'
+        [Desktop Entry]
+        Name=GraalSuite
+        Exec=graalsuite
+        Icon=graalsuite
+        Type=Application
+        Categories=Development;
+        EOF
+        
+        ln -s usr/share/applications/graalsuite.desktop AppDir/graalsuite.desktop
+        ln -s usr/share/icons/hicolor/256x256/apps/graalsuite.png AppDir/graalsuite.png
+        cp AppDir/graalsuite.png AppDir/.DirIcon
+        
+    - name: Build AppImage
+      run: |
+        ./appimagetool AppDir GraalSuite-Linux.AppImage
+        
+    - name: Upload Linux AppImage
+      uses: actions/upload-artifact@v4
+      with:
+        name: GraalSuite-Linux
+        path: GraalSuite-Linux.AppImage
+        
+  upload-release:
+    if: github.event_name == 'release'
+    needs: [build-jar, build-windows-exe, build-linux-appimage]
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download all artifacts
+      uses: actions/download-artifact@v4
+      
+    - name: Upload artifacts to release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          GraalSuite-JAR/GraalSuite.jar
+          GraalSuite-Windows/GraalSuite.exe
+          GraalSuite-Linux/GraalSuite-Linux.AppImage

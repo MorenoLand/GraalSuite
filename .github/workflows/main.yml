@@ -30,11 +30,7 @@ jobs:
         ./build_linux.sh
         
     - name: Upload Artifact
-      run: |
-        if [ "${{ github.event_name }}" == "release" ]; then
-          RELEASE_NAME=$(echo "${{ github.ref }}" | sed -e "s/refs\/tags\///g")
-          echo "Uploading JAR to release $RELEASE_NAME"
-          gh release upload $RELEASE_NAME bin/GraalSuite.jar
-        fi
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: GraalSuite
+        path: bin/GraalSuite.jar

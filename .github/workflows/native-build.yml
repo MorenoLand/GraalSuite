@@ -46,6 +46,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     
+    - name: Set up JDK 8 for Launch4j
+      uses: actions/setup-java@v4
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+        
     - name: Download JAR
       uses: actions/download-artifact@v4
       with:
@@ -85,7 +91,10 @@ jobs:
         
     - name: Build Windows EXE
       shell: cmd
-      run: launch4j\launch4jc.exe launch4j.xml
+      run: |
+        set JAVA_HOME=%JAVA_HOME_8_X64%
+        set PATH=%JAVA_HOME%\bin;%PATH%
+        launch4j\launch4jc.exe launch4j.xml
         
     - name: Upload Windows EXE
       uses: actions/upload-artifact@v4
@@ -147,13 +156,13 @@ jobs:
         
     - name: Build AppImage
       run: |
-        ARCH=x86_64 ./appimagetool AppDir GraalSuite-Linux.AppImage
+        ARCH=x86_64 ./appimagetool AppDir GraalSuite
         
     - name: Upload Linux AppImage
       uses: actions/upload-artifact@v4
       with:
         name: GraalSuite-Linux
-        path: GraalSuite-Linux.AppImage
+        path: GraalSuite
         
   upload-release:
     if: github.event_name == 'release'
@@ -169,4 +178,4 @@ jobs:
         files: |
           GraalSuite-JAR/GraalSuite.jar
           GraalSuite-Windows/GraalSuite.exe
-          GraalSuite-Linux/GraalSuite-Linux.AppImage
+          GraalSuite-Linux/GraalSuite

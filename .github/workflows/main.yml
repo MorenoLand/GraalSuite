@@ -26,38 +26,36 @@ jobs:
         
     - name: Create build script
       run: |
-        cat > build_linux.sh << EOF
-#!/bin/bash
-
-mkdir -p bin build
-
-javac -d build -Xlint:-deprecation -Xlint:-unchecked -cp .:rsyntaxtextarea-3.0.0-SNAPSHOT.jar com/dinkygames/graaleditor/*.java com/dinkygames/graaleditor/undo/*.java org/eclipse/jdt/internal/jarinjarloader/*.java
-
-if [ \$? -ne 0 ]; then
-    echo "Compilation failed"
-    exit 1
-fi
-
-cd build
-jar xf ../rsyntaxtextarea-3.0.0-SNAPSHOT.jar
-cd ..
-
-cp -r res build/
-cp -r META-INF build/ 2>/dev/null || mkdir -p build/META-INF
-
-echo "Manifest-Version: 1.0" > manifest.txt
-echo "Main-Class: com.dinkygames.graaleditor.GraalEditor" >> manifest.txt
-
-jar cvfm bin/GraalSuite.jar manifest.txt -C build .
-
-rm -rf build manifest.txt
-
-echo "Build complete: bin/GraalSuite.jar"
-EOF
-        chmod +x build_linux.sh
+        echo '#!/bin/bash' > build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'mkdir -p bin build' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'javac -d build -Xlint:-deprecation -Xlint:-unchecked -cp .:rsyntaxtextarea-3.0.0-SNAPSHOT.jar com/dinkygames/graaleditor/*.java com/dinkygames/graaleditor/undo/*.java org/eclipse/jdt/internal/jarinjarloader/*.java' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'if [ $? -ne 0 ]; then' >> build_ci.sh
+        echo '    echo "Compilation failed"' >> build_ci.sh
+        echo '    exit 1' >> build_ci.sh
+        echo 'fi' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'cd build' >> build_ci.sh
+        echo 'jar xf ../rsyntaxtextarea-3.0.0-SNAPSHOT.jar' >> build_ci.sh
+        echo 'cd ..' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'cp -r res build/' >> build_ci.sh
+        echo 'cp -r META-INF build/ 2>/dev/null || mkdir -p build/META-INF' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'echo "Manifest-Version: 1.0" > manifest.txt' >> build_ci.sh
+        echo 'echo "Main-Class: com.dinkygames.graaleditor.GraalEditor" >> manifest.txt' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'jar cvfm bin/GraalSuite.jar manifest.txt -C build .' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'rm -rf build manifest.txt' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'echo "Build complete: bin/GraalSuite.jar"' >> build_ci.sh
+        chmod +x build_ci.sh
         
     - name: Build JAR
-      run: ./build_linux.sh
+      run: ./build_ci.sh
         
     - name: Upload Artifact
       uses: actions/upload-artifact@v4

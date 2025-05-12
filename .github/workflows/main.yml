@@ -26,8 +26,8 @@ jobs:
         
     - name: Build JAR
       run: |
-        chmod +x build.sh
-        ./build.sh
+        chmod +x build-linux.sh
+        ./build-linux.sh
         
     - name: Upload Artifact
       run: |

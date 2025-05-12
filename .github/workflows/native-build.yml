@@ -52,11 +52,12 @@ jobs:
         name: GraalSuite-JAR
         path: bin
         
-    - name: Download Launch4j
+    - name: Download and setup Launch4j
       shell: powershell
       run: |
-        Invoke-WebRequest -Uri "https://downloads.sourceforge.net/project/launch4j/launch4j-3/3.50/launch4j-3.50-win32.zip" -OutFile "launch4j.zip"
-        Expand-Archive -Path "launch4j.zip" -DestinationPath "."
+        Invoke-WebRequest -Uri "https://master.dl.sourceforge.net/project/launch4j/launch4j-3/3.14/launch4j-3.14-win32.zip?viasf=1" -OutFile "launch4j.zip"
+        Add-Type -AssemblyName System.IO.Compression.FileSystem
+        [System.IO.Compression.ZipFile]::ExtractToDirectory("$PWD/launch4j.zip", "$PWD")
         
     - name: Create Launch4j Configuration
       shell: cmd
@@ -123,16 +124,18 @@ jobs:
         cp bin/GraalSuite.jar AppDir/usr/bin/
         convert res/graalico_editor.png -resize 256x256 AppDir/usr/share/icons/hicolor/256x256/apps/graalsuite.png || cp res/graalico_editor.png AppDir/usr/share/icons/hicolor/256x256/apps/graalsuite.png
         
-        cat > AppDir/usr/bin/graalsuite << 'EOF'
+        cat > AppDir/AppRun << 'EOF'
         #!/bin/bash
-        java -jar "$APPDIR/usr/bin/GraalSuite.jar" "$@"
+        HERE="$(dirname "$(readlink -f "${0}")")"
+        EXEC="java"
+        exec "$EXEC" -jar "$HERE/usr/bin/GraalSuite.jar" "$@"
         EOF
-        chmod +x AppDir/usr/bin/graalsuite
+        chmod +x AppDir/AppRun
         
         cat > AppDir/usr/share/applications/graalsuite.desktop << 'EOF'
         [Desktop Entry]
         Name=GraalSuite
-        Exec=graalsuite
+        Exec=java -jar usr/bin/GraalSuite.jar
         Icon=graalsuite
         Type=Application
         Categories=Development;
@@ -144,7 +147,7 @@ jobs:
         
     - name: Build AppImage
       run: |
-        ./appimagetool AppDir GraalSuite-Linux.AppImage
+        ARCH=x86_64 ./appimagetool AppDir GraalSuite-Linux.AppImage
         
     - name: Upload Linux AppImage
       uses: actions/upload-artifact@v4

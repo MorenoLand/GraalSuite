@@ -11,8 +11,6 @@ on:
 jobs:
   build-jar:
     runs-on: ubuntu-latest
-    outputs:
-      jar_path: ${{ steps.jar.outputs.path }}
     steps:
     - uses: actions/checkout@v4
     
@@ -37,7 +35,6 @@ jobs:
         rm -rf build manifest.txt
         
     - name: Upload JAR Artifact
-      id: jar
       uses: actions/upload-artifact@v4
       with:
         name: GraalSuite-JAR
@@ -55,10 +52,11 @@ jobs:
         name: GraalSuite-JAR
         path: bin
         
-    - name: Setup Launch4j
-      uses: bastivd/setup-launch4j@v1
-      with:
-        launch4j-version: '3.50'
+    - name: Download Launch4j
+      shell: powershell
+      run: |
+        Invoke-WebRequest -Uri "https://downloads.sourceforge.net/project/launch4j/launch4j-3/3.50/launch4j-3.50-win32.zip" -OutFile "launch4j.zip"
+        Expand-Archive -Path "launch4j.zip" -DestinationPath "."
         
     - name: Create Launch4j Configuration
       shell: cmd
@@ -86,7 +84,7 @@ jobs:
         
     - name: Build Windows EXE
       shell: cmd
-      run: launch4jc launch4j.xml
+      run: launch4j\launch4jc.exe launch4j.xml
         
     - name: Upload Windows EXE
       uses: actions/upload-artifact@v4
@@ -112,10 +110,10 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
-    - name: Install AppImage tools
+    - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y fuse libfuse2
+        sudo apt-get install -y fuse libfuse2 imagemagick
         wget -O appimagetool "https://github.com/AppImage/AppImageKit/releases/download/continuous/appimagetool-x86_64.AppImage"
         chmod +x appimagetool
         
@@ -123,7 +121,7 @@ jobs:
       run: |
         mkdir -p AppDir/usr/bin AppDir/usr/share/applications AppDir/usr/share/icons/hicolor/256x256/apps
         cp bin/GraalSuite.jar AppDir/usr/bin/
-        convert res/graalico_editor.png -resize 256x256 AppDir/usr/share/icons/hicolor/256x256/apps/graalsuite.png
+        convert res/graalico_editor.png -resize 256x256 AppDir/usr/share/icons/hicolor/256x256/apps/graalsuite.png || cp res/graalico_editor.png AppDir/usr/share/icons/hicolor/256x256/apps/graalsuite.png
         
         cat > AppDir/usr/bin/graalsuite << 'EOF'
         #!/bin/bash
@@ -142,7 +140,7 @@ jobs:
         
         ln -s usr/share/applications/graalsuite.desktop AppDir/graalsuite.desktop
         ln -s usr/share/icons/hicolor/256x256/apps/graalsuite.png AppDir/graalsuite.png
-        cp AppDir/graalsuite.png AppDir/.DirIcon
+        cp AppDir/usr/share/icons/hicolor/256x256/apps/graalsuite.png AppDir/.DirIcon
         
     - name: Build AppImage
       run: |

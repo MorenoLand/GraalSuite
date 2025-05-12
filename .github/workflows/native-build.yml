@@ -52,43 +52,24 @@ jobs:
         name: GraalSuite-JAR-${{ github.run_id }}
         path: bin
         
-    - name: Set up Launch4j
-      run: |
-        Invoke-WebRequest -Uri "https://master.dl.sourceforge.net/project/launch4j/launch4j-3/3.14/launch4j-3.14-win32.zip?viasf=1" -OutFile "launch4j.zip"
-        Expand-Archive -Path launch4j.zip -DestinationPath .
-        Get-ChildItem -Path . -Directory -Filter "launch4j*"
+    - name: Use warp-packer for Windows
       shell: powershell
-  
-    - name: Create EXE
       run: |
-        echo ^<launch4jConfig^> > config.xml
-        echo   ^<dontWrapJar^>false^</dontWrapJar^> >> config.xml
-        echo   ^<headerType^>gui^</headerType^> >> config.xml
-        echo   ^<jar^>bin\GraalSuite.jar^</jar^> >> config.xml
-        echo   ^<outfile^>bin\GraalSuite.exe^</outfile^> >> config.xml
-        echo   ^<errTitle^>GraalSuite Error^</errTitle^> >> config.xml
-        echo   ^<chdir^>^</chdir^> >> config.xml
-        echo   ^<customProcName^>true^</customProcName^> >> config.xml
-        echo   ^<icon^>res\graalico_editor.ico^</icon^> >> config.xml
-        echo   ^<jre^> >> config.xml
-        echo     ^<path^>^</path^> >> config.xml
-        echo     ^<minVersion^>1.8.0^</minVersion^> >> config.xml
-        echo     ^<jdkPreference^>preferJre^</jdkPreference^> >> config.xml
-        echo   ^</jre^> >> config.xml
-        echo   ^<versionInfo^> >> config.xml
-        echo     ^<fileVersion^>1.0.0.0^</fileVersion^> >> config.xml
-        echo     ^<txtFileVersion^>1.0.0.0^</txtFileVersion^> >> config.xml
-        echo     ^<fileDescription^>GraalSuite Editor^</fileDescription^> >> config.xml
-        echo     ^<copyright^>^</copyright^> >> config.xml
-        echo     ^<productVersion^>1.0.0.0^</productVersion^> >> config.xml
-        echo     ^<txtProductVersion^>1.0.0.0^</txtProductVersion^> >> config.xml
-        echo     ^<productName^>GraalSuite^</productName^> >> config.xml
-        echo     ^<internalName^>GraalSuite^</internalName^> >> config.xml
-        echo     ^<originalFilename^>GraalSuite.exe^</originalFilename^> >> config.xml
-        echo   ^</versionInfo^> >> config.xml
-        echo ^</launch4jConfig^> >> config.xml
-        launch4j-3.14-win32\launch4j.exe config.xml
-      shell: cmd
+        $workDir = Get-Location
+        $outputPath = "$workDir\bin\GraalSuite.exe"
+        $jarPath = "$workDir\bin\GraalSuite.jar"
+        
+        Invoke-WebRequest -Uri "https://github.com/dgiagio/warp/releases/download/v0.3.0/windows-x64.warp-packer.exe" -OutFile "warp-packer.exe"
+        
+        Write-Output "Creating exe wrapper for Java application..."
+        Start-Process -FilePath "warp-packer.exe" -ArgumentList "--arch windows-x64 --input_dir bin --exec GraalSuite.jar --output $outputPath" -NoNewWindow -Wait
+        
+        if (Test-Path $outputPath) {
+            Write-Output "Successfully created $outputPath"
+        } else {
+            Write-Error "Failed to create executable"
+            exit 1
+        }
         
     - name: Upload Windows EXE
       uses: actions/upload-artifact@v4

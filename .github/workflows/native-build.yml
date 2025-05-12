@@ -37,7 +37,7 @@ jobs:
     - name: Upload JAR Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: GraalSuite-JAR
+        name: GraalSuite-JAR-${{ github.run_id }}
         path: bin/GraalSuite.jar
         
   build-windows-exe:
@@ -49,7 +49,7 @@ jobs:
     - name: Download JAR
       uses: actions/download-artifact@v4
       with:
-        name: GraalSuite-JAR
+        name: GraalSuite-JAR-${{ github.run_id }}
         path: bin
         
     - name: Set up JDK 17
@@ -68,7 +68,7 @@ jobs:
     - name: Upload Windows EXE
       uses: actions/upload-artifact@v4
       with:
-        name: GraalSuite-Windows
+        name: GraalSuite-Windows-${{ github.run_id }}
         path: bin/GraalSuite.exe
         
     - name: Upload Windows EXE
@@ -86,7 +86,7 @@ jobs:
     - name: Download JAR
       uses: actions/download-artifact@v4
       with:
-        name: GraalSuite-JAR
+        name: GraalSuite-JAR-${{ github.run_id }}
         path: bin
         
     - name: Set up JDK 17
@@ -136,7 +136,7 @@ jobs:
     - name: Upload Linux AppImage
       uses: actions/upload-artifact@v4
       with:
-        name: GraalSuite-Linux
+        name: GraalSuite-Linux-${{ github.run_id }}
         path: GraalSuite
         
   upload-release:
@@ -151,6 +151,6 @@ jobs:
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          GraalSuite-JAR/GraalSuite.jar
-          GraalSuite-Windows/GraalSuite.exe
-          GraalSuite-Linux/GraalSuite
+          GraalSuite-JAR-${{ github.run_id }}/GraalSuite.jar
+          GraalSuite-Windows-${{ github.run_id }}/GraalSuite.exe
+          GraalSuite-Linux-${{ github.run_id }}/GraalSuite

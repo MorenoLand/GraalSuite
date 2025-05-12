@@ -1,31 +1,40 @@
-name: Build
+name: Build and Release
 
 on:
   push:
     branches: [ main ]
   pull_request:
     branches: [ main ]
+  release:
+    types: [created]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: read
+      packages: write
+      
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
     
     - name: Set up JDK 8
-      uses: actions/setup-java@v3
+      uses: actions/setup-java@v4
       with:
         java-version: '8'
-        distribution: 'adopt'
+        distribution: 'temurin'
         
-    - name: Build with shell script
+    - name: Build JAR
       run: |
         chmod +x build.sh
         ./build.sh
         
-    - name: Upload JAR
-      uses: actions/upload-artifact@v2
-      with:
-        name: GraalSuite
-        path: bin/GraalSuite.jar
+    - name: Upload Artifact
+      run: |
+        if [ "${{ github.event_name }}" == "release" ]; then
+          RELEASE_NAME=$(echo "${{ github.ref }}" | sed -e "s/refs\/tags\///g")
+          echo "Uploading JAR to release $RELEASE_NAME"
+          gh release upload $RELEASE_NAME bin/GraalSuite.jar
+        fi
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

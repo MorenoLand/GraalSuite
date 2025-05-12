@@ -18,19 +18,45 @@ java -jar bin/GraalSuite.jar
 run.bat
 ```
 
-### Command line
+### Command line (Windows)
 
 ```bash
-# Compile all Java files
-javac -Xlint:-deprecation -Xlint:-unchecked -cp .;rsyntaxtextarea-3.0.0-SNAPSHOT.jar com/dinkygames/graaleditor/*.java com/dinkygames/graaleditor/undo/*.java org/eclipse/jdt/internal/jarinjarloader/*.java
+# Build executable JAR
+build_win.bat
 
 # Run from JAR (after building)
 java -jar bin/GraalSuite.jar
 
 # -----------------------------------
 
-# Run directly 
+# Run directly
+run_win.bat
+
+or
+
 java -cp .;rsyntaxtextarea-3.0.0-SNAPSHOT.jar com.dinkygames.graaleditor.GraalEditor
+
+```
+
+
+## Command Line (Linux, only tested in Ubuntu)
+
+
+```bash
+# Build executable JAR
+build_linux.sh
+
+# Run from JAR (after building)
+java -jar bin/GraalSuite.jar
+
+# -----------------------------------
+
+# Run directly
+run_linux.sh
+
+or
+
+java -cp .:rsyntaxtextarea-3.0.0-SNAPSHOT.jar com.dinkygames.graaleditor.GraalEditor
 
 ```
 

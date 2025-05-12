@@ -1,7 +1,3 @@
-[![Jar Build](https://github.com/username/GraalSuite/actions/workflows/main.yml/badge.svg)](https://github.com/username/GraalSuite/actions/workflows/main.yml)
-
-[![Native Builds](https://github.com/username/GraalSuite/actions/workflows/native-build.yml/badge.svg)](https://github.com/username/GraalSuite/actions/workflows/native-build.yml)
-
 ## Requirements
 
 - Java JDK 8 or higher

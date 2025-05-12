@@ -153,7 +153,7 @@ public class GraalEditor {
 
                window.frame.setMinimumSize(new Dimension(780, 480));
                window.frame.setVisible(true);
-               window.frame.setTitle("Graal Suite Beta v0.1.02");
+               window.frame.setTitle("Graal Suite Beta v0.1.03");
                window.frame.setIconImage(ImageIO.read(GraalEditor.class.getResource("/res/graalico_editor.png")));
             } catch (Exception var2) {
                var2.printStackTrace();

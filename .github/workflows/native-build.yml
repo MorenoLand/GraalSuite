@@ -61,9 +61,11 @@ jobs:
     - name: Create Windows EXE with jpackage
       shell: cmd
       run: |
-        mkdir -p dist/windows
-        jpackage --input bin --main-jar GraalSuite.jar --main-class com.dinkygames.graaleditor.GraalEditor --type app-image --dest dist/windows --name GraalSuite --icon res/graalico_editor.ico
-        copy dist\windows\GraalSuite\GraalSuite.exe bin\GraalSuite.exe
+        mkdir dist
+        mkdir dist\windows
+        echo {} > bin\GraalSuite.cfg
+        jpackage --input bin --main-jar GraalSuite.jar --main-class com.dinkygames.graaleditor.GraalEditor --type exe --dest dist\windows --name GraalSuite --icon res\graalico_editor.ico --win-shortcut --win-menu --win-per-user-install
+        copy dist\windows\GraalSuite-*.exe bin\GraalSuite.exe
         
     - name: Upload Windows EXE
       uses: actions/upload-artifact@v4

@@ -1,0 +1,71 @@
+name: Build
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  release:
+    types: [created]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      packages: write
+      
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up JDK 8
+      uses: actions/setup-java@v4
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+        
+    - name: Create build script
+      run: |
+        echo '#!/bin/bash' > build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'mkdir -p bin build' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'javac -d build -Xlint:-deprecation -Xlint:-unchecked -cp .:rsyntaxtextarea-3.0.0-SNAPSHOT.jar com/dinkygames/graaleditor/*.java com/dinkygames/graaleditor/undo/*.java org/eclipse/jdt/internal/jarinjarloader/*.java' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'if [ $? -ne 0 ]; then' >> build_ci.sh
+        echo '    echo "Compilation failed"' >> build_ci.sh
+        echo '    exit 1' >> build_ci.sh
+        echo 'fi' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'cd build' >> build_ci.sh
+        echo 'jar xf ../rsyntaxtextarea-3.0.0-SNAPSHOT.jar' >> build_ci.sh
+        echo 'cd ..' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'cp -r res build/' >> build_ci.sh
+        echo 'cp -r META-INF build/ 2>/dev/null || mkdir -p build/META-INF' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'echo "Manifest-Version: 1.0" > manifest.txt' >> build_ci.sh
+        echo 'echo "Main-Class: com.dinkygames.graaleditor.GraalEditor" >> manifest.txt' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'jar cvfm bin/GraalSuite.jar manifest.txt -C build .' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'rm -rf build manifest.txt' >> build_ci.sh
+        echo '' >> build_ci.sh
+        echo 'echo "Build complete: bin/GraalSuite.jar"' >> build_ci.sh
+        chmod +x build_ci.sh
+        
+    - name: Build JAR
+      run: ./build_ci.sh
+        
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: GraalSuite
+        path: bin/GraalSuite.jar
+        
+    - name: Upload to Release
+      if: github.event_name == 'release'
+      run: |
+        gh release upload ${{ github.event.release.tag_name }} bin/GraalSuite.jar
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
